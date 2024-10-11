@@ -19,7 +19,7 @@ as well as text y-position in the bar.
 > if you are using [awesome bar](https://dwm.suckless.org/patches/awesomebar/)
 > Use the below example to make sure its working with you for the active window.
 
-```bash
+```diff
 
 @@ -940,12 +940,7 @@ drawbar(Monitor *m)
                         for (c = m->clients; c; c = c->next) {
@@ -44,8 +44,7 @@ as well as text y-position in the bar.
 +        //if the client is selected
 +        if(m->sel == c) {
 +          drw_setscheme(drw, scheme[SchemeSel]);
-+          int dash_width = tabw;  // Width of the dash
-+          int dash_height = 2;  // Height of the dash 
++          int dash_height = 2;  // Height of the dash , this would be replaced with the config.h variable for the dash height
 +          drw_rect(drw, x, 0, tabw, dash_height, 1, 1);  
 +        }
 +
